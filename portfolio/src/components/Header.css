@@ -1,0 +1,35 @@
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 1rem 0;
+    z-index: 1000; /* Ensure it's above other content */
+   
+
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .navbar a {
+    transition: transform 0.3s ease-in-out;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .navbar a:hover{
+    
+    transform: translateY(-7px);
+  }
+  
+  @media (max-width: 600px) {
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  

@@ -1,0 +1,27 @@
+/* src/components/Introduction.css */
+.introduction {
+    position: relative;
+    height: 100vh;
+  }
+  
+  .introduction-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .profile-pic {
+    border-radius: 70%;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 1rem;
+  }
+  
+  .bio {
+    color: white;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  

@@ -1,0 +1,39 @@
+/* src/components/Contact.css */
+.contact {
+    padding: 2rem;
+  }
+  
+  .contact-form {
+    margin-left: 100px;
+    margin-right: 100px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .contact-form button {
+    padding: 0.5rem;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+  }
+  
+  .social-icons {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .social-icons a {
+    color: #333;
+    text-decoration: none;
+  }
+  

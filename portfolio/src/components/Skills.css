@@ -1,0 +1,32 @@
+/* src/components/Skills.css */
+.skills {
+    padding: 2rem;
+  }
+  
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  
+  .skill {
+    background-color: gray;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.5s ease-in, transform 0.5s ease-in;
+  }
+  
+  .skill:hover{
+    color:white;
+    background-color: black;
+    transform: translateY(-5px)
+  }
+  .progress-bar {
+    background-color: black;
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+  }
+  
