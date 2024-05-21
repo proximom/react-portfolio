@@ -1,174 +1,106 @@
-/* src/components/Header.css */
-/* html {
-  scroll-behavior: smooth;
-}
+/* Header.css */
 .header {
   position: fixed;
-  width: 100%;
   top: 0;
-  background: #333;
-  color: white;
-  z-index: 1000;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  padding: 1rem 0;
+  z-index: 1000; /* Ensure it's above other content */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 1rem;
 }
 
-.navbar-logo a {
-  color: white;
+.navbar a {
+  transition: transform 0.3s ease-in-out;
+  color: #fff;
   text-decoration: none;
-  font-size: 1.5rem;
+  display: flex; /* Align icon and text horizontally */
+  align-items: center; /* Center vertically */
+  margin: 0 1rem; /* Add spacing between links */
 }
 
-.navbar-links {
-  display: flex;
-  gap: 1rem;
+.navbar a:hover {
+  transform: translateY(-7px);
 }
 
-.navbar-links a {
-  padding: 4px;
-  color: white;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.navbar-links a:hover {
-  color: hotpink;
-  transform: translateY(-2px);
-}
-
-.navbar-toggle {
-  display: none;
-  font-size: 1.5rem;
+.menu-button {
+  background: none;
+  border: none;
+  padding: 10px;
   cursor: pointer;
+  outline: none;
 }
 
-@media (max-width: 768px) {
-  .navbar-links {
-    display: none;
-    flex-direction: column;
-    background: #333;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100%;
-  }
-
-  .navbar-links.active {
-    display: flex;
-  }
-
-  .navbar-toggle {
-    display: block;
-  }
+.menu-icon {
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  display: block;
+  transition: all 0.3s ease-in-out;
 }
 
-.introduction {
-  padding-top: 80px; 
-} */
-/* default styling *
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+.menu-icon::before,
+.menu-icon::after {
+  content: '';
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  display: block;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-icon::before {
+  transform: translateY(-8px);
+}
+
+.menu-icon::after {
+  transform: translateY(5px);
+}
+
+.menu-icon.open {
+  background-color: transparent;
+}
+
+.menu-icon.open::before {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-icon.open::after {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (min-width: 601px) {
+  .menu-button {
+    display: none; /* Hide button on larger screens */
   }
-  
-  ul {
-    list-style: none;
-  }
-  
-  a {
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
-  }
-  
-  /* navbar */
+
   .navbar {
-    background-color: aliceblue;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    display: none; /* Hide navbar by default */
+    flex-direction: column;
     align-items: center;
-    gap: 40px;
-    min-height: 70px;
+    position: absolute;
+    top: 100%; /* Position below the header */
+    left: 0;
+    background-color: #333;
+    width: 100%;
+    padding: 1rem 0;
   }
-  
-  
-  /* logo  */
-  .logo {
-    font-size: 30px;
-    font-family: Arial, Helvetica, sans-serif;
+
+  .navbar.open {
+    display: flex; /* Show navbar when menu is open */
   }
-  
-  
-  /* ul  */
-  .navMenu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 60px;
-  }
-  
-  /* media queries */
-  
-  @media screen and (max-width: 780px){
-    
-    /* hamburger */
-    .hamburger {
-      display: block;
-      cursor: pointer;
-    }
-  
-    .bar {
-          background-color: #120f0b;
-          width: 20px;
-          height: 3px;
-          display: block;
-          margin: 5px;
-          -webkit-transition: 0.3s ease-in-out;
-          transition: 0.3s ease-in-out;
-      }
-  
-    /* adding active class to the bars  */
-    .hamburger.active .bar:nth-child(2){
-      opacity: 0;
-    }
-    .hamburger.active .bar:nth-child(1){
-      transform: translateY(8px) rotate(45deg);
-    }
-    .hamburger.active .bar:nth-child(3){
-      transform: translateY(-8px) rotate(-45deg);
-    }
-  
-  
-    /* navMenu */
-  
-    .navMenu{
-      position: absolute;
-      flex-direction: column;
-      gap: 0;
-      top: 70px;
-      left: -100%;
-      text-align: start;
-      width: 100%;
-      transition: 0.7s ease-in-out;
-      background-color: aliceblue;
-      padding: 10px;
-    }
-  
-    .navMenu.active{
-      left: 0;
-    }
-  
-    .navMenu li {
-      margin: 16px 0;
-    }
-  }
+}

@@ -21,7 +21,8 @@
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
-  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition: transform 0.5s ease-in;
+    
 }
 
 .skill:hover{
@@ -53,7 +54,7 @@
   border-radius: 5px;
   overflow: hidden;
   position: relative;
-  height: 20px; /* Adjust height as needed */
+  height: 27px; /* Adjust height as needed */
 }
 
 .progress {
