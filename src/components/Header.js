@@ -246,7 +246,7 @@ const Header = () => {
 
   return (
     <StyledHeader>
-      <NavItem href="#home" className="brand">BrandName</NavItem>
+      <NavItem href="#home" className="brand">Welcome!</NavItem>
       <Hamburger onClick={toggleNav}>
         <div />
         <div />
