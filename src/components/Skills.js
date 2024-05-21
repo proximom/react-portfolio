@@ -1,30 +1,33 @@
 // src/components/Skills.js
 import React from 'react';
 import './Skills.css';
+import { FaJs, FaReact, FaCss3Alt, FaHtml5, FaDatabase, FaPython, FaMicrosoft, FaDotCircle, FaMobileAlt } from 'react-icons/fa';
 
 const skills = [
-  { name: 'JavaScript', level: 90 },
-  { name: 'React', level: 80 },
-  { name: 'CSS', level: 75 },
-  { name: 'HTML', level: 60 },
-  { name: 'Database', level: 88 },
-  { name: 'Python', level: 50 },
-  { name: 'C#', level: 70 },
-  { name: '.NET', level: 90 },
-  { name: 'Flutter', level: 90 },
-  // add more skills as needed
+  { name: 'JavaScript', level: 90, icon: <FaJs />, animation: 'fade-left' },
+  { name: 'React', level: 80, icon: <FaReact />, animation: 'fade-right' },
+  { name: 'CSS', level: 75, icon: <FaCss3Alt />, animation: 'fade-left' },
+  { name: 'HTML', level: 60, icon: <FaHtml5 />, animation: 'fade-right' },
+  { name: 'Database', level: 88, icon: <FaDatabase />, animation: 'fade-left' },
+  { name: 'Python', level: 50, icon: <FaPython />, animation: 'fade-right' },
+  { name: 'C#', level: 70, icon: <FaMicrosoft />, animation: 'fade-left' },
+  { name: '.NET', level: 90, icon: <FaDotCircle />, animation: 'fade-right' },
+  { name: 'Flutter', level: 90, icon: <FaMobileAlt />, animation: 'fade-left' },
 ];
 
 const Skills = () => {
   return (
     <section id="skills" className="skills">
-      <h2>Skills</h2>
+      <h2 data-aos="fade-up">Skills</h2>
       <div className="skills-grid">
-        {skills.map((skill) => (
-          <div className="skill" key={skill.name}>
+        {skills.map((skill, index) => (
+          <div className="skill" key={skill.name} data-aos={skill.animation} data-aos-delay={index * 100}>
+            <div className="skill-icon">{skill.icon}</div>
             <h3>{skill.name}</h3>
-            <div className="progress-bar" style={{ width: `${skill.level}%` }}>
-              <span>{skill.level}%</span>
+            <div className="progress-bar">
+              <div className="progress" style={{ width: `${skill.level}%` }}>
+                <span>{skill.level}%</span>
+              </div>
             </div>
           </div>
         ))}

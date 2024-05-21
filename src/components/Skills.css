@@ -1,32 +1,74 @@
-/* src/components/Skills.css */
+
 .skills {
-    padding: 2rem;
-  }
-  
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-  }
-  
-  .skill {
-    background-color: gray;
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    transition: background-color 0.5s ease-in, transform 0.5s ease-in;
-  }
-  
-  .skill:hover{
-    color:white;
-    background-color: black;
-    transform: translateY(-5px)
-  }
-  .progress-bar {
-    background-color: black;
-    color: #fff;
-    padding: 0.5rem;
-    border-radius: 5px;
-    margin-top: 0.5rem;
-  }
-  
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+.skills h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.skill {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.skill:hover{
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.1);
+  background-color: black;
+  color: white;
+  transform: translateY(-2px);
+}
+
+
+.skill:hover .progress {
+  background-color: red; /* Change the progress bar color on hover */
+}
+.skill:hover .skill-icon {
+  color: red; /* Change the progress bar color on hover */
+}
+.skill-icon {
+  font-size: 2rem;
+  color: hotpink;
+  margin-bottom: 1rem;
+} 
+
+.skill h3 {
+  margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+  background-color: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  height: 20px; /* Adjust height as needed */
+}
+
+.progress {
+  background-color: hotpink;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 5px;
+  border-radius: 5px;
+}
+
+.progress span {
+  color: #fff;
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 1;
+}
